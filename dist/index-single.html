@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Offline H5P Viewer</title>
+  <style>
+    body { margin: 0; padding: 0; }
+    #h5p-container { padding: 20px; }
+  </style>
+</head>
+<body>
+  <div id="h5p-container"></div>
+
+  <script src="main.bundle.js"></script>
+  <script>
+    new H5PStandalone.H5P(document.getElementById('h5p-container'), {
+      h5pJsonPath: '/h5p/question-1',
+      frameJs: 'frame.bundle.js',
+      frameCss: '/styles/h5p.css',
+    });
+  </script>
+</body>
+</html>

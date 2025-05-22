@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Offline H5P Viewer</title>
+  <style>
+    body { margin: 0; padding: 0; }
+    #h5p-container { padding: 20px; }
+  </style>
+</head>
+<body>
+  <div id="h5p-container"></div>
+
+  <script src="main.bundle.js"></script>
+  <script type="module">
+    import { H5P } from './h5p-standalone.d.ts'; // ES6
+    // const { H5P } = require('h5p-standalone'); AMD
+    // const { H5P } = 'H5PStandalone'; // object destructuring
+
+    const el = document.getElementById('h5p-container');
+    const options = {
+        h5pJsonPath: '/h5p/question-1',
+        frameJs: 'frame.bundle.js',
+        frameCss: '/styles/h5p.css',
+    };
+
+    new H5P(el, options);
+  </script>
+</body>
+</html>

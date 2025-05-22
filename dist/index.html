@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Offline H5P Viewer</title>
+  <style>
+    body { margin: 0; padding: 0; }
+    #h5p-container-1 { padding: 20px; }
+    #h5p-container-2 { padding: 20px; }
+  </style>
+</head>
+<body>
+  <div id="h5p-container-1"></div>
+  <div id="h5p-container-2"></div>
+
+  <script src="main.bundle.js"></script>
+  <script>
+    const { H5P } = H5PStandalone;
+    const player1El = document.getElementById('h5p-container-1');
+    const player2El = document.getElementById('h5p-container-2');
+
+    const player1Options  = {
+      h5pJsonPath: '/h5p/question-1',
+      frameJs: 'frame.bundle.js',
+      frameCss: '/styles/h5p.css',
+    }
+
+    const player2Options  = {
+      h5pJsonPath: '/h5p/question-2',
+      frameJs: 'frame.bundle.js',
+      frameCss: '/styles/h5p.css',
+    }
+
+    const player1 = new H5P(player1El, player1Options);
+    const player2 = new H5P(player2El, player2Options);
+
+    /*//Method 1
+    player1.then(() => {
+      return new H5P(player2El, player2Options);
+    }).then(() => {
+      // do stuff
+    });
+    */
+    //Method 2
+    async function myPlayer() {
+      await player1;
+      await player2;
+    }
+    
+    myPlayer();
+    
+  </script>
+</body>
+</html>
