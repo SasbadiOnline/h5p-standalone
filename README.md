@@ -8,19 +8,22 @@ Display H5P content without the need for an H5P server
 	npm install --save-dev webpack webpack-cli
 	npm run build
 	```
-3. Download H5P content from Moodle My Courses, then rename file extension from `.h5p` to `.zip`.
-4. Navigate `dist` folder, create new folder `h5p-content`.
-5. Copy H5P content and paste into `h5p-content` folder, then extract it.
-6. Set Up a Local Web Server, open terminal and run
+3. To download H5P content, go to the H5P activity in Moodle.
+4. Click on the "Reuse" button below the H5P content, then click `Download as .h5p` to download the H5P file.
+   ![Moodle - Download H5P Content](https://github.com/user-attachments/assets/9fc1769e-7f78-43b4-9167-181ccc61a465)
+5. Rename downloaded H5P file extension from `.h5p` to `.zip`.
+6. Navigate `dist` folder, create new folder `h5p-content`.
+7. Copy H5P content and paste into `h5p-content` folder, then extract it.
+8. Set Up a Local Web Server, open terminal and run
 	```
 	npm install -g http-server
 	```
-7. In terminal, navigate to `dist` folder, then start server
+9. In terminal, navigate to `dist` folder, then start server
 	```
 	cd dist
 	http-server
 	```
-8. Open browser and navigate to [http://localhost:8080](http://localhost:8080) to view H5P content.
+10. Open browser and navigate to [http://localhost:8080](http://localhost:8080) to view H5P content.
 
 ## :floppy_disk: Quick Guide For USB Thumb Drive Setup ##
 What is Mongoose?
