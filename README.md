@@ -1,6 +1,36 @@
 # H5P Standalone Player 3.x [![CircleCI](https://circleci.com/gh/tunapanda/h5p-standalone.svg?style=svg)](https://circleci.com/gh/tunapanda/h5p-standalone)
 Display H5P content without the need for an H5P server
 
+## :computer: Quick Guide For First Time Setup ##
+1. Clone [h5p-standalone](https://github.com/SasbadiOnline/h5p-standalone) from github.
+2. Open terminal and run 
+	```
+	npm install --save-dev webpack webpack-cli
+	npm run build
+	```
+3. Download H5P content from Moodle My Courses, then rename file extension from `.h5p` to `.zip`.
+4. Navigate `dist` folder, create new folder `h5p-content`.
+5. Copy H5P content and paste into `h5p-content` folder, then extract it.
+6. Set Up a Local Web Server, open terminal and run
+	```
+	npm install -g http-server
+	```
+7. In terminal, navigate to `dist` folder, then start server
+	```
+	cd dist
+	http-server
+	```
+8. Open browser and navigate to [http://localhost:8080](http://localhost:8080) to view H5P content.
+
+## :floppy_disk: Quick Guide For USB Thumb Drive Setup ##
+What is Mongoose?
+Mongoose is a tiny, standalone executable that runs a local web server — no installation needed. Just double-click it, and it serves the folder it’s in.
+1. Download [Mongoose](https://mongoose.ws/binary/) or [Mongoose (SourceForge Mirror)](https://sourceforge.net/projects/mongoose-emb-web-server.mirror/)
+2. Copy all content inside `dist` folder into UBS thumb drive.
+3. Copy `mongoose.exe` into USB thumbdrive, same folder contain `dist` files.
+4. Test USB thumb drive by click `mongoose.exe` to start server.
+5. Open browser and navigate to [http://localhost:8000](http://localhost:8000) to view H5P content.
+
 ## Installation
 
 **Source**|**Info**
